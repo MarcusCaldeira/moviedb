@@ -9,6 +9,11 @@ const welcome = "Welcome to React";
 // Defining a class named app... it will extend component
 class App extends Component {
   //Render method required for every component. Simply just whats output. 
+  
+  state = {
+    toggle: true
+  }
+  
   render() {
     return (
       //This is our actual JSX CODE classname instead of class because Class is reserved in js.
@@ -27,6 +32,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          {this.state.toggle}
           <p>This should show and hide</p>
           <button>This Should show/hide</button>
         </header>
