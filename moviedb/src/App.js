@@ -1,15 +1,23 @@
+// Bring in React, then in brackets you bring in component
 import React, { Component } from 'react';
+// Next were importing logo... import logo from... the svg. 
 import logo from './logo.svg';
+// importing the logo 
 import './App.css';
 
+const welcome = "Welcome to React";
+// Defining a class named app... it will extend component
 class App extends Component {
+  //Render method required for every component. Simply just whats output. 
   render() {
     return (
+      //This is our actual JSX CODE classname instead of class because Class is reserved in js.
       <div className="App">
         <header className="App-header">
+        {/* you can use this js variables */}
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            {welcome}
           </p>
           <a
             className="App-link"
@@ -19,9 +27,20 @@ class App extends Component {
           >
             Learn React
           </a>
+          <p>This should show and hide</p>
+          <button>This Should show/hide</button>
         </header>
       </div>
     );
+  }
+}
+
+class Welcome extends Component{
+  render(){
+    const {text} = this.props;
+    return(
+      <h1 className = "app title">{text}</h1>
+    )
   }
 }
 
