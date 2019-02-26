@@ -13,6 +13,13 @@ class App extends Component {
   state = {
     toggle: true
   }
+  toggle = () =>{
+    //is A method on a react component that updates state.
+    this.setState({
+      //this changes the state of toggle to the opposite state of the set toggle
+      toggle: !this.state.toggle
+    })
+  }
   
   render() {
     return (
@@ -32,9 +39,10 @@ class App extends Component {
           >
             Learn React
           </a>
-          {this.state.toggle}
+          {this.state.toggle && 
+          }
           <p>This should show and hide</p>
-          <button>This Should show/hide</button>
+          <button onClick={this.toggle}>This Should show/hide</button>
         </header>
       </div>
     );
