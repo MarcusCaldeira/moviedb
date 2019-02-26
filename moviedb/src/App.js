@@ -9,6 +9,14 @@ const welcome = "Welcome to React";
 // Defining a class named app... it will extend component
 class App extends Component {
   //Render method required for every component. Simply just whats output. 
+
+  constructor(props){
+    super(props);
+    console.log('constructor')
+  }
+  componentWillMount(){
+    console.log('will Mount')
+  }
   
   state = {
     toggle: true
@@ -51,7 +59,8 @@ class App extends Component {
 
 class Welcome extends Component{
   render(){
-    const {text} = this.props;
+    const {text, toggle} = this.props;
+    console.log(toggle);
     return(
       <h1 className = "app title">{text}</h1>
     )
