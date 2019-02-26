@@ -40,8 +40,8 @@ class App extends Component {
             Learn React
           </a>
           {this.state.toggle && 
-          }
           <p>This should show and hide</p>
+          }
           <button onClick={this.toggle}>This Should show/hide</button>
         </header>
       </div>
