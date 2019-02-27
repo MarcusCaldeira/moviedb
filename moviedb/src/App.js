@@ -9,24 +9,9 @@ const welcome = "Welcome to React";
 // Defining a class named app... it will extend component
 class App extends Component {
   //Render method required for every component. Simply just whats output. 
+  submit = () =>{
+    console.log(this.text.value);
 
-  constructor(props){
-    super(props);
-    console.log('constructor')
-  }
-  componentWillMount(){
-    console.log('will Mount')
-  }
-  
-  state = {
-    toggle: true
-  }
-  toggle = () =>{
-    //is A method on a react component that updates state.
-    this.setState({
-      //this changes the state of toggle to the opposite state of the set toggle
-      toggle: !this.state.toggle
-    })
   }
   
   render() {
@@ -47,10 +32,8 @@ class App extends Component {
           >
             Learn React
           </a>
-          {this.state.toggle && 
-          <p>This should show and hide</p>
-          }
-          <button onClick={this.toggle}>This Should show/hide</button>
+          <input type = "text" ref={(input) => this.text = input}/>
+          <button onClick={this.submit}>Show Value</button>
         </header>
       </div>
     );
@@ -59,8 +42,7 @@ class App extends Component {
 
 class Welcome extends Component{
   render(){
-    const {text, toggle} = this.props;
-    console.log(toggle);
+    const {text} = this.props;
     return(
       <h1 className = "app title">{text}</h1>
     )
