@@ -1,54 +1,36 @@
-// Bring in React, then in brackets you bring in component
 import React, { Component } from 'react';
-// Next were importing logo... import logo from... the svg. 
 import logo from './logo.svg';
-// importing the logo 
 import './App.css';
 
-const movies = [
-  {
+import Movie from './movie';
+
+const movies = [{
     id: 1,
-    title: "Star Wars"
-  },
-  {
+    title: 'Star Wars'
+  }, {
     id: 2,
-    title: "Mean Girls"
-  },
-  {
+    title: 'Spider Man'
+  }, {
     id: 3,
-    title: "Jennifers Body"
+    title: '36th Chamber of Shaolin'
+  }, {
+    id: 4,
+    title: '5 Deadly Venoms'
   }
 ];
 
 
-
-
-
-
-// Defining a class named app... it will extend component
 class App extends Component {
-  //Render method required for every component. Simply just whats output.
   render() {
     return (
-      //This is our actual JSX CODE classname instead of class because Class is reserved in js.
       <div className="App">
         <header className="App-header">
-          {/* you can use this js variables */}
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        {movies.map(movies=>(
-            <div key={movies.id}>
-            {movies.title}
-
-          </div>
-          )
-        )}
+        {movies.map(movie => <Movie key={movie.id} movie={movie} />)}
       </div>
     );
   }
 }
-
-
-
 
 export default App;
