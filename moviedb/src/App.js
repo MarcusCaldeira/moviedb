@@ -15,16 +15,16 @@ state = {
     try {
       const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=15123773d1c1297ddb32ef458dd99384&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
       const movies = await res.json();
-      console.log(movies);
       this.setState({
-        movie: movies.results
-      })
+        movies: movies.results
+      });
     } catch(e){
       console.log(e);
     }
 
   }
   render() {
+    console.log(this.state.movies);
     return (
       <div className="App">
         <header className="App-header">
