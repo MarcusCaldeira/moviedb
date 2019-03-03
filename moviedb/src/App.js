@@ -4,27 +4,28 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Link,
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
-import movieList from './moviesList';
+import moviesList from './moviesList';
+import movieDetail from './moviesDetail.js';
 
 const App = () => (
   <Router>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="App-logo" alt="logo" />
+        </Link>
       </header>
       <Switch>
-        <Route path="/test" component={Test} />
-        {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
+        <Route exact path="/" component={moviesList} />
+        <Route path="/:id" component={movieDetail} />
       </Switch>
     </div>
   </Router>
 );
-export default App;
 
-const Test = () => (
-  <h1>TEST</h1>
-);
+export default App;
