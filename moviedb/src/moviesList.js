@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Movie from './Movie';
 
+
 class MoviesList extends Component {
   state = {
     movies: [],
@@ -21,7 +22,7 @@ class MoviesList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="moviesGrid">
         {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
       </div>
     );
@@ -29,3 +30,4 @@ class MoviesList extends Component {
 }
 
 export default MoviesList;
+
