@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color:red;
+  background-color:white;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -21,10 +21,4 @@
 
 .App-link {
   color: #61dafb;
-}
-.moviesGrid{
-  display: grid;
-  padding: 1rem;
-  grid-template-columns: repeat(6,1fr);
-  grid-row-gap: 1rem;
 }
